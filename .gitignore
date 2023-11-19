@@ -1,0 +1,3 @@
+node_modules
+dist
+src/constant/static-files/static-files.json

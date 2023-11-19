@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "extends": [
+    "airbnb",
+    "airbnb-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "import/no-unresolved": 0,
+    "import/extensions": [
+      "error",
+      "never",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never",
+        "raw": "never",
+        "scss": "always",
+        "json": "always"
+      }
+    ],
+    "react/function-component-definition": [
+      "warn",
+      {
+        "namedComponents": "function-declaration",
+        "unnamedComponents": "arrow-function"
+      }
+    ],
+    "react/require-default-props": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".jsx", ".tsx"]
+      }
+    ]
+  },
+  "parserOptions": {
+    "project": true
+  }
+}

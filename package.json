@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json.schemastore.org/package",
+  "name": "xyster",
+  "version": "0.1.0",
+  "description": "bloated javascript build system",
+  "author": "Holly",
+  "type": "module",
+  "files": [
+    "dist/x.mjs"
+  ],
+  "scripts": {
+    "lint": "eslint ./src",
+    "build": "bun build ./src/entry/x.ts --target=bun --external=eslint --external=esbuild --external=esbuild-sass-plugin --external=postcss --external=postcss-modules --outfile ./dist/x.mjs && sed -i '1i#!/usr/bin/env bun' dist/x.mjs",
+    "generate-static-files": "bun ./src/entry/generate-static-files.ts",
+    "npm-publish": "bun generate-static-files && bun run build && npm publish"
+  },
+  "bin": {
+    "x": "dist/x.mjs"
+  },
+  "dependencies": {
+    "esbuild": "^0.19.7",
+    "esbuild-sass-plugin": "^2.16.0",
+    "eslint": "^8.54.0",
+    "postcss": "^8.4.31",
+    "postcss-modules": "^6.0.0"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.7",
+    "@types/node": "^20.9.3",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "bun-types": "^1.0.13",
+    "typescript": "^5.3.2"
+  }
+}

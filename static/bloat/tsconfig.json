@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "jsxImportSource": "preact",
+    "baseUrl": "src",
+    "rootDir": "src",
+    "resolveJsonModule": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "target": "ESNext",
+    "lib": [
+      "ESNext",
+      "DOM"
+    ]
+  },
+  "include": ["src"]
+}
